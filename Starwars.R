@@ -10,7 +10,7 @@ library(ggplot2)
 starwars <- dplyr::starwars
 
 
-  rows_without_NAs <- starwars %>%              #QUEST›ON 1
+  rows_without_NAs <- starwars %>%              #QUEST√ùON 1
   drop_na(starships) %>% 
   select(name , starships)
   list(rows_without_NAs)
@@ -19,11 +19,11 @@ starwars <- dplyr::starwars
 
 
 
- starwars %>% count(eye_color , sort = TRUE) # QUEST›ON 2
+ starwars %>% count(eye_color , sort = TRUE) # QUEST√ùON 2
  
  
  
-      starwars %>%                          # QUEST›ON 3 
+      starwars %>%                          # QUEST√ùON 3 
             filter(!is.na(birth_year)) %>%
             filter(!is.na(species)) %>%
             group_by(species) %>%
@@ -32,7 +32,7 @@ starwars <- dplyr::starwars
 
 
       
-starwars_mydata<-(starwars%>%       #QUEST›ON 4
+starwars_mydata<-(starwars%>%       #QUEST√ùON 4
               add_row(name="zekeriya",height=185,mass=90,hair_color="black",skin_color="dark",
                       eye_color="black",birth_year=1997,sex="male",gender="feminine",homeworld="Corellia",
                       species="Human",films=list(c("Solo: A Star Wars Story","Star Wars: Episode IV - A New Hope")),vehicles=list(c("Snowspeeder")),starships=list(c("Millennium Falcon"))))
@@ -42,7 +42,7 @@ starwars_mydata<-(starwars%>%       #QUEST›ON 4
 
 
  
-starwars_mydata <- starwars_mydata  %>%                        # QUEST›ON 5
+starwars_mydata <- starwars_mydata  %>%                        # QUEST√ùON 5
   mutate( Age = 2021 - (1977 - birth_year))
 
 starwars_mydata <- starwars_mydata %>% 
@@ -54,19 +54,19 @@ starwars_mydata <- starwars_mydata %>%
 
 
 
-starwars_Less <- starwars_mydata %>%        #QUEST›ON 6
+starwars_Less <- starwars_mydata %>%        #QUEST√ùON 6
       filter(Age < 100 )  
   
   ggplot(data = starwars_Less , mapping = aes(x =Age , fill =BMI_Observation )) + 
     geom_histogram(alpha = 1.5) + 
     labs(x = "Less 100 Age in ", 
          title = "Plot the distribution of ages less than 100 by BMI groups", 
-         subtitle = "by BMI OBSERVAT›ON")
+         subtitle = "by BMI OBSERVAT√ùON")
 
 
   
   
-  ggplot(data=starwars_Less) +                                            #QUEST›ON 7
+  ggplot(data=starwars_Less) +                                            #QUEST√ùON 7
     geom_point(mapping = aes(x = Age, y = BMI ,alpha=Age, color=BMI ) ) +
     labs(title="the relationship between age and BMI values ", x="AGE", y="BMI VALUEs")
   
